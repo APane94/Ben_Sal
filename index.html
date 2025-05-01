@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benessere & Arti Marziali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-100 font-sans">
+    <!-- Navbar dinamica -->
+    <nav class="bg-neutral-800 text-white shadow-lg fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl">Benessere & Arti Marziali</span>
+                </div>
+                
+                <!-- Menu desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-neutral-300 transition">Home</a>
+                    <a href="#massaggi" class="hover:text-neutral-300 transition">Massaggi</a>
+                    <a href="#arti-marziali" class="hover:text-neutral-300 transition">Arti Marziali</a>
+                    <a href="#chi-sono" class="hover:text-neutral-300 transition">Chi Sono</a>
+                    <a href="#contatti" class="hover:text-neutral-300 transition">Contatti</a>
+                </div>
+                
+                <!-- Hamburger menu per mobile -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Menu mobile -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#home" class="block py-2 hover:text-neutral-300 transition">Home</a>
+                <a href="#massaggi" class="block py-2 hover:text-neutral-300 transition">Massaggi</a>
+                <a href="#arti-marziali" class="block py-2 hover:text-neutral-300 transition">Arti Marziali</a>
+                <a href="#chi-sono" class="block py-2 hover:text-neutral-300 transition">Chi Sono</a>
+                <a href="#contatti" class="block py-2 hover:text-neutral-300 transition">Contatti</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header diviso in due sezioni -->
+    <header id="home" class="pt-24 pb-10">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center text-neutral-800 mb-12">Benvenuti nel mio mondo</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Sezione Massaggi -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden section-transition hover:shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Massaggi" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-neutral-800 mb-3">Massaggi Terapeutici</h2>
+                        <p class="text-neutral-600 mb-4">Scopri il potere curativo dei massaggi terapeutici. Tecniche personalizzate per alleviare tensioni, stress e dolori muscolari.</p>
+                        <a href="#massaggi" class="inline-block bg-neutral-700 text-white py-2 px-4 rounded hover:bg-neutral-600 transition">Scopri di più</a>
+                    </div>
+                </div>
+                
+                <!-- Sezione Arti Marziali -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden section-transition hover:shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Arti Marziali" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-neutral-800 mb-3">Arti Marziali Tradizionali</h2>
+                        <p class="text-neutral-600 mb-4">Impara le antiche discipline delle arti marziali. Corsi per tutti i livelli che combinano tecnica, disciplina e filosofia orientale.</p>
+                        <a href="#arti-marziali" class="inline-block bg-neutral-700 text-white py-2 px-4 rounded hover:bg-neutral-600 transition">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sezione Massaggi con Carosello -->
+    <section id="massaggi" class="py-16 bg-neutral-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-neutral-800 mb-12">Massaggi Terapeutici</h2>
+            
+            <!-- Carosello dei massaggi -->
+            <div class="carousel-container relative max-w-4xl mx-auto">
+                <!-- Slides del carosello -->
+                <div class="carousel-slides">
+                    <!-- Slide 1: Massaggio Decontratturante -->
+                    <div class="carousel-slide bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-neutral-700 text-4xl mb-4 flex justify-center">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-neutral-800 mb-3 text-center">Massaggio Decontratturante</h3>
+                        <p class="text-neutral-600">Tecnica mirata a sciogliere le tensioni muscolari, particolarmente efficace per chi soffre di dolori alla schiena, al collo e alle spalle.</p>
+                    </div>
+                    
+                    <!-- Slide 2: Shiatsu -->
+                    <div class="carousel-slide bg-white p-6 rounded-lg shadow-md hidden">
+                        <div class="text-neutral-700 text-4xl mb-4 flex justify-center">
+                            <i class="fas fa-hand-holding"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-neutral-800 mb-3 text-center">Shiatsu</h3>
+                        <p class="text-neutral-600">Antica tecnica giapponese basata sulla pressione dei punti energetici. Riequilibra il flusso di energia vitale, allevia lo stress e migliora la circolazione.</p>
+                    </div>
+                    
+                    <!-- Slide 3: Massaggio Sportivo -->
+                    <div class="carousel-slide bg-white p-6 rounded-lg shadow-md hidden">
+                        <div class="text-neutral-700 text-4xl mb-4 flex justify-center">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-neutral-800 mb-3 text-center">Massaggio Sportivo</h3>
+                        <p class="text-neutral-600">Ideale per atleti e sportivi, aiuta a prevenire infortuni, accelerare il recupero muscolare e migliorare le prestazioni fisiche.</p>
+                    </div>
+                    
+                    <!-- Slide 4: Massaggio del Benessere -->
+                    <div class="carousel-slide bg-white p-6 rounded-lg shadow-md hidden">
+                        <div class="text-neutral-700 text-4xl mb-4 flex justify-center">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-neutral-800 mb-3 text-center">Massaggio del Benessere</h3>
+                        <p class="text-neutral-600">Un'esperienza completa che combina diverse tecniche per donare un profondo senso di benessere. Rilassa il corpo, calma la mente e rigenera lo spirito.</p>
+                    </div>
+                </div>
+                
+                <!-- Controlli del carosello -->
+                <div class="carousel-controls flex justify-between items-center mt-6">
+                    <button class="carousel-prev bg-neutral-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-neutral-600 transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <!-- Indicatori -->
+                    <div class="carousel-indicators flex space-x-2">
+                        <button class="carousel-indicator w-3 h-3 rounded-full bg-neutral-700"></button>
+                        <button class="carousel-indicator w-3 h-3 rounded-full bg-neutral-400"></button>
+                        <button class="carousel-indicator w-3 h-3 rounded-full bg-neutral-400"></button>
+                        <button class="carousel-indicator w-3 h-3 rounded-full bg-neutral-400"></button>
+                    </div>
+                    
+                    <button class="carousel-next bg-neutral-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-neutral-600 transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contatti" class="inline-block bg-neutral-700 text-white py-3 px-6 rounded-lg hover:bg-neutral-600 transition">Prenota una sessione</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Arti Marziali -->
+    <section id="arti-marziali" class="py-16 bg-neutral-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-neutral-800 mb-12">Arti Marziali</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-neutral-700 text-4xl mb-4 flex justify-center">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-800 mb-3 text-center">Karate</h3>
+                    <p class="text-neutral-600 mb-4">Arte marziale giapponese basata su tecniche di percussione che utilizza pugni, calci, ginocchia e gomiti. Sviluppa forza, disciplina e autocontrollo.</p>
+                    <ul class="text-neutral-600 list-disc pl-5 mb-4">
+                        <li>Kata (forme)</li>
+                        <li>Kumite (combattimento)</li>
+                        <li>Tecniche di autodifesa</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-neutral-700 text-4xl mb-4 flex justify-center">
+                        <i class="fas fa-dharmachakra"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-800 mb-3 text-center">Kobudo</h3>
+                    <p class="text-neutral-600 mb-4">Arte marziale tradizionale di Okinawa che si concentra sull'uso di armi tradizionali come il bo (bastone lungo), sai, tonfa e nunchaku.</p>
+                    <ul class="text-neutral-600 list-disc pl-5 mb-4">
+                        <li>Maneggio delle armi tradizionali</li>
+                        <li>Kata con armi</li>
+                        <li>Applicazioni pratiche</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contatti" class="inline-block bg-neutral-700 text-white py-3 px-6 rounded-lg hover:bg-neutral-600 transition">Iscriviti a un corso</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Chi Sono -->
+    <section id="chi-sono" class="py-16 bg-neutral-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-neutral-800 mb-12">Chi Sono</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Maestro" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-semibold text-neutral-800 mb-4">Maestro Alessandro</h3>
+                    <p class="text-neutral-600 mb-4">Da oltre 20 anni mi dedico allo studio e all'insegnamento delle arti marziali tradizionali. Il mio percorso mi ha portato a esplorare anche il mondo dei massaggi terapeutici, scoprendo le profonde connessioni tra queste discipline.</p>
+                    <p class="text-neutral-600 mb-4">Sono certificato come istruttore di Kung Fu e Tai Chi, e come massoterapista specializzato in tecniche orientali e occidentali. La mia filosofia è basata sull'equilibrio tra corpo e mente, e sul potere curativo del movimento consapevole.</p>
+                    <p class="text-neutral-600">Ogni lezione e ogni sessione di massaggio è personalizzata in base alle esigenze individuali, con l'obiettivo di promuovere benessere, forza interiore e armonia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer con contatti e social -->
+    <footer id="contatti" class="bg-neutral-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contatti -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contatti</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt w-6"></i>
+                            <span>Via Roma 123, Milano</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone w-6"></i>
+                            <span>+39 123 456 7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope w-6"></i>
+                            <span>info@benesseremarziali.it</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Orari -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Orari</h3>
+                    <ul class="space-y-2">
+                        <li>Lunedì - Venerdì: 9:00 - 20:00</li>
+                        <li>Sabato: 9:00 - 18:00</li>
+                        <li>Domenica: Chiuso</li>
+                    </ul>
+                </div>
+                
+                <!-- Social -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Seguici</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-neutral-300 transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-neutral-300 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-neutral-300 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-neutral-300 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <form class="flex flex-col space-y-2">
+                            <input type="email" placeholder="La tua email" class="px-4 py-2 rounded text-neutral-800">
+                            <button type="submit" class="bg-neutral-600 hover:bg-neutral-500 px-4 py-2 rounded transition">Iscriviti alla newsletter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-700 mt-8 pt-8 text-center text-neutral-400">
+                <p>&copy; 2023 Benessere & Arti Marziali. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
